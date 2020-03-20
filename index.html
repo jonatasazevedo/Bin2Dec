@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Bin2Dec</title>
+</head>
+<body>
+    <div class="block">
+        <div class="border">
+            <h1>Bin2Dec</h1>
+            <h2>Binary to Decimal Converter</h2>
+            <label for="binary">Binary</label>
+            <input type="number" id="binary">
+            <label for="decimal">Decimal</label>
+            <input type="text" id="decimal" readonly>
+            <button type="button" id="btnConvert">Convert</button>
+        </div>
+    </div>
+
+    <script>
+        var inputBinary = document.querySelector('input[id=binary]');
+        var outputDecimal = document.querySelector('input[id=decimal]');
+        var btnConvert = document.querySelector('button[id=btnConvert]');
+
+        function verify(txtBinary){
+            if(txtBinary==='') return false;
+            for(let i=0,size = txtBinary.length; i<size;i++){
+                console.log(txtBinary[i])
+                if(txtBinary[i]!=='0' && txtBinary[i]!=='1'){
+                    return false;
+                }
+            }
+            
+            return true;
+        }
+
+        btnConvert.onclick = function(){
+            var textBinary = (inputBinary.value).trim();
+            if(verify(textBinary)){
+                var decimal = parseInt(textBinary,10);
+                outputDecimal.value = decimal;
+            }
+            else{
+                outputDecimal.value = '';
+                alert("Enter a binary number");
+            }
+        }
+    </script>
+</body>
+</html>
