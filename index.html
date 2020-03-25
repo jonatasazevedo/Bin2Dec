@@ -19,14 +19,13 @@
     </div>
 
     <script>
-        var inputBinary = document.querySelector('input[id=binary]');
-        var outputDecimal = document.querySelector('input[id=decimal]');
+        var inputBinary = document.querySelector('#binary');
+        var outputDecimal = document.querySelector('#decimal');
         var btnConvert = document.querySelector('#btnConvert');
 
         function verify(txtBinary){
             if(txtBinary==='') return false;
             for(let i=0,size = txtBinary.length; i<size;i++){
-                console.log(txtBinary[i])
                 if(txtBinary[i]!=='0' && txtBinary[i]!=='1'){
                     return false;
                 }

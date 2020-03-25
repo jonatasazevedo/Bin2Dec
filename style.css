@@ -29,7 +29,7 @@ body{
     align-items: center;
     flex-direction: column;
     border-radius: 5%;
-    padding: 5rem 7rem;
+    padding: 4rem 5rem;
 }
 
 input{
@@ -50,14 +50,13 @@ button{
     width: 12rem;
 }
 
- input[type=number]::-webkit-inner-spin-button { 
+input[type=number]::-webkit-inner-spin-button { 
     -webkit-appearance: none;
-    
 }
 
-@media(max-width: 550px) {
+@media(max-width: 470px) {
     .border{
         width: 95vw;
-        padding: 4rem 3rem;
+        height: 95vh;
     }
 }
