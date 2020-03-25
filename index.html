@@ -21,7 +21,7 @@
     <script>
         var inputBinary = document.querySelector('input[id=binary]');
         var outputDecimal = document.querySelector('input[id=decimal]');
-        var btnConvert = document.querySelector('button[id=btnConvert]');
+        var btnConvert = document.querySelector('#btnConvert');
 
         function verify(txtBinary){
             if(txtBinary==='') return false;
@@ -31,14 +31,14 @@
                     return false;
                 }
             }
-            
             return true;
         }
 
         btnConvert.onclick = function(){
             var textBinary = (inputBinary.value).trim();
             if(verify(textBinary)){
-                var decimal = parseInt(textBinary,10);
+                var decimal = parseInt(textBinary,2);
+                decimal = parseInt(decimal,10);
                 outputDecimal.value = decimal;
             }
             else{
